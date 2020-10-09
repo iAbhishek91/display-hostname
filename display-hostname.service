@@ -1,0 +1,21 @@
+[Unit]
+Description=display_hostname
+
+[Service]
+User=abhi_das2007das
+
+# The configuration file application.properties should be here:
+#change this to your workspace
+WorkingDirectory=/home/abhi_das2007das/workspace/display-hostname
+
+#path to executable. 
+#executable is a bash script which calls jar file
+ExecStart=/home/abhi_das2007das/workspace/display-hostname/start.sh
+
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
